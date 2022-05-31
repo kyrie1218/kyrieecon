@@ -1,4 +1,3 @@
-- [关于我](/README.md)
 - [常用工具](/blog/tools/tools.md)
   - [Docsify](/blog/tools/docsify.md)
 

@@ -28,6 +28,31 @@ docsify serve docs
 4. 修改主题配置(index.html)
 
 ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kyrie's World</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="./_media/custom.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster"rel="stylesheet">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'Kyrie’s World',
+      repo: 'https://github.com/kyrie1218/kyrieecon',
+      coverpage:true,
+      themeColor: '#25798A',
+      loadSidebar: true,
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <!--复制代码插件-->
   <script src="https://unpkg.com/docsify-copy-code@2"></script>
   <!--katex数学公式插件-->
@@ -48,4 +73,6 @@ docsify serve docs
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <!--上下翻页插件-->
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+</body>
+</html>
 ```
