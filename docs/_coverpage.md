@@ -1,4 +1,4 @@
-# Kyrie’s World
+# Kyrie’s EconLab
 ## 真理总是比你想象得更简单
 经济学笔记 | 快乐学习技术 | 数学
 

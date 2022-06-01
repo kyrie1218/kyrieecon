@@ -1,9 +1,14 @@
-- [常用工具](/blog/tools/tools.md)
+- 经济学理论
+  - [导论](/blog/theory/econtheory.md)
+  - 内生增长理论
+    - [Rivera-Batiz and Romer (1991)](/blog/theory/endogenous_growth/Rivera-Batiz&Romer1991.md)
+  - 内生周期理论
+    - [Matsuyama (1999, 2001)](/blog/theory/endogenous_cycle/matsuyama1999&2001.md)
+- 经验证据
+  - [导论](/blog/empirical/evidence.md)
+
+- 经济数学
+  - [导论](/blog/math/math.md)
+- 研究工具
+  - [导论](/blog/tools/tools.md)
   - [Docsify](/blog/tools/docsify.md)
-
-- [经济学理论](/blog/theory/econtheory.md)
-  - [内生周期](/blog/theory/encycle.md)
-
-- [经验证据](/blog/empirical/evidence.md)
-
-- [数学](/blog/math/math.md)

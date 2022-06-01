@@ -1,4 +1,4 @@
-# Kyrie's World 🍤
+# Kyrie's EconLab 🍤
 
 #### 个人简介
 
