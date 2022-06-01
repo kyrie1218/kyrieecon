@@ -1,2 +1,5 @@
 ##### 跨期替代弹性
-a commander of a fleet or naval squadron, or a naval officer of very high rank.
+所谓跨期替代弹性$\sigma_{X}$是指变量$X_{t}$在$t$期和$t+1$之间的相对水平$X_{t+1}/X_{t}$随相对价格$P(X_{t+1})/P(X_{t})$的反向变动程度（以各自的百分比衡量）。即有
+$$
+\ln \frac{X_{t+1}}{X_{t}}=-\sigma_{X} \ln \frac{P(X_{t+1})}{P(X_{t})}
+$$
