@@ -22,7 +22,8 @@ $$
 c_{t+1}^{o}+(1+n)b_{t+1}=w_{t+1}^{o}+T_{t+1}+s_{t+1}^{y}(1+r_{t+1}) \tag{3}
 $$
 
-此时，根据
+此时，根据[数学推导](https://github.com/kyrie1218/maple_for_macroeconomics/blob/master/sala-i-martin1996.ipynb)，我们获得一阶条件如下：
+
 
 
 ## 参考文献
