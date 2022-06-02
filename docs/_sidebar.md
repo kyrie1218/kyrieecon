@@ -1,9 +1,11 @@
 - 经济学理论
   - [导论](/blog/theory/econtheory.md)
-  - 内生增长理论
+  - 内生增长
     - [Rivera-Batiz and Romer (1991)](/blog/theory/endogenous_growth/Rivera-Batiz&Romer1991.md)
-  - 内生周期理论
+  - 内生周期
     - [Matsuyama (1999, 2001)](/blog/theory/endogenous_cycle/matsuyama1999&2001.md)
+  - 最优社保
+    - [Sala-i-Martin (1996)](/blog/theory/social_security/sala-i-martin1996.md)
 - 经验证据
   - [导论](/blog/empirical/evidence.md)
 
