@@ -9,4 +9,5 @@ $$
 >$$\sigma_{C} \equiv -\frac{\partial \ln \frac{C_{t+1}}{C_{t}}}{\partial \ln \frac{U'(C_{t+1})}{U'(C_{t})}}=-\frac{\partial \ln \frac{C_{t+1}}{C_{t}}}{\partial \ln (\frac{C_{t+1}}{C_{t}})^{-\theta}}=1/\theta$$
 > 其中，消费者均衡时的价格体现为消费的边际效用。
 
+##### 李嘉图等价
 
