@@ -1,5 +1,5 @@
 ## 1. 简介
-SymPy是Python中的一个优秀的符号和数值计算库。其官网为[https://www.sympy.org/en/index.html](https://www.sympy.org/en/index.html).本文使用1.9版本。
+SymPy是Python中的一个优秀的符号和数值计算库。其官网为[https://www.sympy.org/en/index.html](https://www.sympy.org/en/index.html).本文使用1.9版本。示例代码存放在`/code/sympy_example.py`中。
 
 ## 2. 一个简单的例子
 
