@@ -7,7 +7,10 @@
   - 最优社保
     - [Sala-i-Martin (1996)](/blog/theory/social_security/sala-i-martin1996.md)
 - 经验证据
-  - [导论](/blog/empirical/evidence.md)
+  - 增长方程
+    - [Alfo et al. (2022)](/blog/empirical/alfo2022.md)
+    - [Mankiw et al. (1992)](/blog/empirical/mankiw1992.md)
+
 
 - 经济数学
   - [导论](/blog/math/math.md)
