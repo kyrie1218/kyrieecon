@@ -19,3 +19,4 @@
   - [Docsify](/blog/tools/docsify.md)
   - [Sympy](/blog/tools/sympy.md)
   - [Numpy](/blog/tools/numpy.md)
+  - [Manjora](/blog/tools/manjora.md)
