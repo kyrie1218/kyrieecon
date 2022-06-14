@@ -77,4 +77,15 @@ yay -S wemeet-bin
 
 bin版本
 
+6. 字体设置
+sudo pacman -S ttf-roboto noto-fonts ttf-dejavu 
+sudo pacman -S wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei
+sudo pacman -S noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
+
+然后到tweak中更换字体即可。
+sans monospace 改为Dejavu Sans monospace
+其他改为Roboto Regular
+
+
+
  
