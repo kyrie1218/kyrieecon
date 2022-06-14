@@ -102,5 +102,8 @@ sudo pacman -S pandoc
 - 安装user-theme扩展
 - 创建目录`～/.themes`，然后到[Mojave-gtk-theme](https://github.com/vinceliuice/Mojave-gtk-theme)下载主题文件，解压后放到.themes目录。之后到tweak设置即可。
 
+10. 截图工具
+yay -S flameshot
+
 
  
