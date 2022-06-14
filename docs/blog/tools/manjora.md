@@ -51,17 +51,20 @@ sudo snap install shadowsocks-electron
 打开shadowsocks-electron进入恢复选项即可。
 
 设置终端代理：
-```bash
+```zsh
 yay -S proxychains-ng
 sudo gedit /etc/proxychains.conf
 ```
-将最后面的socks4 127.0.0.1 9095 改为 socks5 127.0.0.1 1080
+注释掉proxy dns,然后将最后面的socks4 127.0.0.1 9095 改为 socks5 127.0.0.1 1080
+
+使用时，只需在原有命令前加proxychains即可，如`proxychains yay -S typora
 3. vscode，chrome, nodejs npm,docsify
 ```
 yay -S visual-studio-code-bin 
 yay -S google-chrome
 sudo pacman -S nodejs npm
 sudo npm i docsify-cli -g
+proxychains yay -S typora-free
 ```
 4 . 配置git
 ```
@@ -86,6 +89,18 @@ sudo pacman -S noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-se
 sans monospace 改为Dejavu Sans monospace
 其他改为Roboto Regular
 
+7. 安装图床picgo
+
+yay -S picgo-appimage
+
+8. 安装pandoc
+sudo pacman -S pandoc
+
+安装zotero,obsidian
+
+9. 安装mcmojave主题
+- 安装user-theme扩展
+- 创建目录`～/.themes`，然后到[Mojave-gtk-theme](https://github.com/vinceliuice/Mojave-gtk-theme)下载主题文件，解压后放到.themes目录。之后到tweak设置即可。
 
 
  
