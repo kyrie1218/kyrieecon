@@ -15,8 +15,12 @@
 - 经济数学
   - [导论](/blog/math/math.md)
 - 研究工具
-  - [导论](/blog/tools/tools.md)
-  - [Docsify](/blog/tools/docsify.md)
-  - [Sympy](/blog/tools/sympy.md)
-  - [Numpy](/blog/tools/numpy.md)
-  - [Manjora](/blog/tools/manjora.md)
+  - Python
+    - [Python基础](/blog/tools/python/pythonabc.md)
+    - [导论](/blog/tools/tools.md)
+    - [Docsify](/blog/tools/docsify.md)
+    - [Sympy](/blog/tools/sympy.md)
+    - [Numpy](/blog/tools/numpy.md)
+    - [Manjora](/blog/tools/manjora.md)
+  - Python代码阅读
+    - [RBC模型@davidrpugh](blog/tools/pyeconomics/rbc.md)

@@ -128,4 +128,11 @@ yay -S albert-bin
     proxychains yay -S anaconda
     source /opt/anaconda/bin/activate root
     ```
-    
+
+14. 安装微软和苹果字体
+想法弄到字体文件，然后将其放到`~/.local/share/fonts/`中，重启系统，然后到tweak中选取。  
+
+15. 安装阿里云盘
+```
+yay -S aliyunpan-liupan1890
+```
