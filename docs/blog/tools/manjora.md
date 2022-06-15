@@ -97,13 +97,35 @@ yay -S picgo-appimage
 sudo pacman -S pandoc
 
 安装zotero,obsidian
+```
+yay -S zotero-bin
+yay -S obsidian
+```
+依次安装zotero插件:zotfile ，better-bibtex，mdnotes，配置mdnotes到obsidian
+
 
 9. 安装mcmojave主题
 - 安装user-theme扩展
 - 创建目录`～/.themes`，然后到[Mojave-gtk-theme](https://github.com/vinceliuice/Mojave-gtk-theme)下载主题文件，解压后放到.themes目录。之后到tweak设置即可。
 
-10. 截图工具
-yay -S flameshot
+10. 截图快捷键
+ctrl-alt-P
 
+11. 应用启动器
+yay -S albert-bin
 
- 
+设置快捷键为alt+space
+
+12. 安装python3-pip
+
+    ```
+    sudo pacman -S python-pip
+    ```
+
+13. 安装anaconda
+
+    ```
+    proxychains yay -S anaconda
+    source /opt/anaconda/bin/activate root
+    ```
+    
