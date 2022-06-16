@@ -34,4 +34,7 @@ print(rand_a)
 
 randint_a = np.random.randint([1 3],10,size=(5,3)) # 5行3列的离散均匀分布[1,10)
 print(randint_a)
+
+
+
 ```

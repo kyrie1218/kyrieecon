@@ -18,3 +18,29 @@ $$
 >- 定义__init__方法时,不能使用return;
 >- 一般用于存放类的属性,如类名,公共参数值,打印一些问候信息。
 
+##### kwargs.get方法
+该方法用于设置默认的可选关键词参数，即如果该关键词参数没有赋值，则使用其中的默认参数。例如：
+```
+self.stochastic = kwargs.get('stochastic',False)
+```
+这意味着如果关键词参数stochastic没有设置，则默认为`stochastic=False`，此时，实例属性`self.stochastic = False`。
+
+
+##### Python中的None值
+None是python中的一个常量，代表真空状态，没有输出，一般可作为占位符。
+
+##### Python中的assert语句
+assert语句用于条件判断是否声明内容为真，如果为真，则继续运行，否则，将导致程序因异常而中断。
+
+##### np.random.seed方法
+该方法是Numpy中的一个方法，用于设置随机数的序号，该序号可以用于重复原来的随机结果。
+
+##### Python中的pass语句
+pass语句用于语法结构的占位，例如：
+```python
+def fun(x):
+    pass
+```
+这时，函数fun没有定义具体操作，仅用pass占位，以防止运行错误。
+
+
