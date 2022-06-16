@@ -132,7 +132,71 @@ yay -S albert-bin
 14. 安装微软和苹果字体
 想法弄到字体文件，然后将其放到`~/.local/share/fonts/`中，重启系统，然后到tweak中选取。  
 
-15. 安装阿里云盘
+15. 安装云盘
 ```
 yay -S aliyunpan-liupan1890
+proxychains yay -S baidunetdisk
 ```
+baidunetdisk选择electron, electron-bin,否则可能安装后打不开。
+16. 安装wps
+```
+yay -S wps-office
+```
+注：不要选cn版本，不然界面显示会有字体错位的现象。
+
+17. 安装stata15se
+下载stata15的linux安装包（网盘），然后解压。之后按照如下流程操作：
+
+(1)在`/usr/local/`中创建文件夹，名叫stata15
+```
+sudo mkdir /usr/local/stata15/
+```
+(2)到如上目录中运行install安装
+```
+cd /usr/local/stata15
+sudo ~/Downloads/stata15-linux/install
+```
+(3) 激活输入序列号等
+```
+sudo ./stinit
+```
+(4) 将stata安装目录添加到zsh环境变量
+```
+echo export PATH="/usr/local/stata15:$PATH" >> ~/.zshrc
+source ~/.zshrc
+```
+此时，在终端输入stata就可以启动了。注意，如果报错，如缺少libncurses5或者libpng12就安装：
+```
+yay -S ncurses5-compat-libs
+yay -S libpng12
+```
+(5) 在jupyter notebook中与python共用。
+很可惜，失败了！
+
+18. 安装maple2022
+- (1) 下载maple2022-linux安装包（网盘），当前文件夹输入：
+```
+7z x maple2022-linux64.zip
+chmod u+x Maple2022.0LinuxX64Installer.run
+./Maple2022.0LinuxX64Installer.run
+```
+将其安装到`/home/kyrie/maple2022`中。
+- (2) 替换license目录下的`license.dat`文件和bin.X86_64_LINUX目录下的`libmaple.so`。
+- (3) 链接到jupyter notebook
+新建一个目录存放Maple的Jupyter配置文件，建议设在Maple安装目录下。
+```
+mkdir /home/kyrie/maple2022/jupyter
+```
+启动Maple2022，并新建一个文件。在“数学”模式下，文件输入下列代码：
+```
+with(Jupyter):
+GenerateKernelConfiguration("/home/kyrie/maple2022/jupyter"); 
+```
+
+之后终端运行如下代码即可：
+```
+sudo jupyter kernelspec install "/home/kyrie/maple2022/jupyter/maple"
+```
+- (4) 将`/usr/local/share/jupyter/kernels/maple`移动到`./local/share/jupyter/kernels`后，就可以在vscode的anaconda中使用了。
+
+
