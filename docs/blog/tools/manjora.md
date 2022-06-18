@@ -76,9 +76,9 @@ ssh-keygen -t rsa -C "kyrie1218@163.com"
 到home/.ssh/id_rsa.pub复制内容，之后在自己的github帐号添加ssh key。
 
 5. 视频会议
-yay -S wemeet-bin
+yay -S dingtalk-bin
 
-bin版本
+使用x.org登录。
 
 6. 字体设置
 sudo pacman -S ttf-roboto noto-fonts ttf-dejavu 
