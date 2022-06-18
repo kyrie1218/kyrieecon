@@ -22,6 +22,7 @@
     - [Python基础](/blog/tools/python/pythonabc.md)
     - [Sympy](/blog/tools/python/sympy.md)
     - [Numpy](/blog/tools/python/numpy.md)
+    - [Matplotlib](/blog/tools/python/matplotlib.md)
 
   - Python代码阅读
     - [RBC模型@davidrpugh](blog/tools/pyeconomics/rbc.md)

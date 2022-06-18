@@ -38,3 +38,13 @@ print(randint_a)
 
 
 ```
+### 3.2 代数运算
+```python
+# 1. array的乘法（星乘/点乘/矩阵乘）
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([0, 1, 3, 4, 6])
+a*b # 两个相同shape的ndarray可以进行星乘(*)，即相同位置的元素求积
+# left blank for dot and matrix products
+
+
+```

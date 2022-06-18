@@ -62,6 +62,125 @@ class Model(object):  # 定义一个类名叫Model，默认继承object类
             self.eps = stats.norm(0, self.param_dict['sigma'])
         else:
             pass  # else占位，不做任何操作。
+
+    # 方法的定义
+    def get_utility(self,C): # 定义获取效用流的方法
+        """Representative agent has constant relative risk aversion 
+        (CRRA) preferences over consumption per worker, C.
+        For \theta \neq 1, CRRA preferences are:
+        
+        u(C_t) = \frac{C_t^{1 - \theta} - 1}{1 - \theta}
+        For \theta = 1, CRRA preferences are equivalent to:
+        u(C_t) = ln C_t
+        The parameter \theta has a dual role.  It is the coefficient 
+        of relative risk aversion (the higher is theta, the more risk 
+        averse is the representative agent); and it is also the inverse
+        of the intertemporal elasticity of substitution (the higher is 
+        theta, the less willing is the representative agent to shift
+        consumption back and forth across time).
+        
+        Inputs: consumption per worker, C.
+        Returns: utility from consuming C, u(C).
+        
+        """
+        # extract the params
+        theta = self.param_dict['theta']
+
+        if theta != 1:
+            return (C**(1-theta)-1)/(1-theta)
+        else:
+            return np.log(C)
+
+    def get_lifetimeUtility(self,c,A0=1,L0=1,H=1):
+                """Computes lifetime utility associated with a consumption 
+        stream. Note that the function automatically accounts for 
+        growth in technology and population. 
+    
+        Inputs: 
+            1. an array, c representing a consumption stream in per 
+               effective worker units.
+            2. A0: (default = 1) some value for the initial level of 
+               technology.
+            3. L0: (default = 1) some value for the initial size of 
+               labor force.
+            4. H: (default = 1) size of the representative household.
+        
+        Returns: A list containing...
+        
+            1. Present discount value, in terms of utility, of the 
+               consumption stream.
+            2. The path of discounted flow utility (for plotting)
+    
+        """
+
+        # extract the params
+        g = self.param_dict['g'] # 外生增长率
+        n = self.param_dict['n'] # 外生人口增长率
+        beta = self.param_dict['beta'] # 贴现因子
+
+        # time path
+        time  = np.arrange(0,np.size(c),1) # 生成时间路径0,1,2,...,所需要的消费流的存在长度
+        # need to inflate consumption per effective worker by technology
+        tech_path = A0*(1+g)**time # 生成技术进步的序列
+
+        # need to discount future utility from consumption 
+        discount_factor = (L0 / float(H))*(beta*(1+n))**time # 生成贴现率序列
+
+        # compute the path of utility
+        utility_path  = discount_factor*self.get_utility(c*tech_path)
+
+        return [np.sum(utility_path),utility_path] #返回终生效用和效用流
+
+    # 设定初始稳态的k(资本-有效劳动比)
+    def set_k_star(self):
+        """The steady-state level of capital stock per effective 
+        worker, k_star, in the Solow model is a function of the 
+        exogenous parameters!
+    
+        """
+        # extract params
+        s = self.param_dict['s']
+        n = self.param_dict['n']
+        g = self.param_dict['g']
+        alpha = self.param_dict['alpha']
+        delta = self.param_dict['delta']
+
+        return (s / ((1+g)*(1+n)-(1-delta)))**(1/(1-alpha))
+
+    # 定义k的转移态(由于外生技术冲击zplus的影响)
+    def get_newCapital(self, k, zplus):
+        """Function that takes end of period t's capital stock per 
+        effective worker, k_t, and and a contemporaneous technology 
+        shock, z_{t+1}, and returns the end of period t+1's capital 
+        stock per effective worker, kplus.
+        k_{t+1} = \frac{1}{(1 + g)(1 + n)z_{t+1}}[(1 - \delta)k_t + sk_t^{\alpha}]
+        
+        Inputs: 
+            1. capital per effective worker, k.
+            2. technology shock, z (defaults to 1 in every period if
+               self.deterministic == True).
+        Returns: next period's value of capital per effective worker,
+                 kplus.
+    
+        """ 
+        # extract params 
+        n = self.param_dict['n']
+        g = self.param_dict['g']
+        s = self.param_dict['s']
+        alpha = self.param_dict['alpha']
+        delta = self.param_dict['delta']
+
+        # next period's capital per effective worker
+        kplus = (1/((1+g)*(1+n)*zplus))*((1-delta)*k+s*k**alpha)
+
+        return kplus
+    
+    # 定义外生冲击的序列
+    def get_newTechShock(self, z, eplus):
+        
+
+
+
 ```
 
 ## 重要术语
