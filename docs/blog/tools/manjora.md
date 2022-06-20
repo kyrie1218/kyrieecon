@@ -203,6 +203,13 @@ sudo jupyter kernelspec install "/home/kyrie/maple2022/jupyter/maple"
 - 主题/图标/壁纸 [https://github.com/vinceliuice/WhiteSur-gtk-theme](https://github.com/vinceliuice/WhiteSur-gtk-theme)
 按要求操作即可。
 
+20. 下载firefox-nightly
+```
+yay -S firefox-nightly
+```
+
+21. 定期备份
+使用默认的time shift。
 
 
 

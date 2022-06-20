@@ -27,3 +27,4 @@
 
   - Python代码阅读
     - [Solow模型@davidrpugh](blog/tools/pyeconomics/solow.md)
+    - [Ramsey模型@davidrpugh](blog/tools/pyeconomics/ramsey.md)
