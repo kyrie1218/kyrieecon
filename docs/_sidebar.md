@@ -26,4 +26,4 @@
     - [Scipy](/blog/tools/python/scipy.md)
 
   - Python代码阅读
-    - [RBC模型@davidrpugh](blog/tools/pyeconomics/rbc.md)
+    - [Solow模型@davidrpugh](blog/tools/pyeconomics/solow.md)

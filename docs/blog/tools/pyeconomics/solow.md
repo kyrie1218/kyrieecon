@@ -1,4 +1,4 @@
-## 解读python代码：RBC模型
+## 解读python代码：Solow模型
 
 ```python
 import numpy as np # 导入处理array的包
