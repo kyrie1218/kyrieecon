@@ -44,3 +44,28 @@ def fun(x):
 这时，函数fun没有定义具体操作，仅用pass占位，以防止运行错误。
 
 
+##### Python中的copy方法
+如果对一个字典`dict`应用`copy`方法，及使用`dict.copy()`，那么我们实际上对其字典`dict`进行了怎么样的操作呢？
+
+答案：浅复制一个相同的字典，但与直接赋值有些区别。区别在于后者会随被复制字典的数据变动而变动，而前者不会。例如：
+```python
+dict1 =  {'user':'kyrie'}
+ 
+dict2 = dict1          # 直接赋值
+dict3 = dict1.copy()   # copy方法
+ 
+# 修改 data 数据
+dict1['user']='root'
+# 输出结果
+print(dict1)
+print(dict2)
+print(dict3)
+```
+结果如下：
+```
+{'user': 'root'}
+{'user': 'root'}
+{'user': 'kyrie'}
+```
+
+

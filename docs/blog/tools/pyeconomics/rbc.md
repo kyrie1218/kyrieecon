@@ -177,6 +177,117 @@ class Model(object):  # 定义一个类名叫Model，默认继承object类
     
     # 定义外生冲击的序列
     def get_newTechShock(self, z, eplus):
+        """生成一个随机过程来表示技术冲击。
+
+        输入： 
+            1. z: 上期的技术冲击水平
+            2. eplus: 一个N(0,sigma)的正态随机变量（扰动项）
+
+        输出： 当期的技术冲击水平
+
+        """
+        # 获取技术冲击的一阶自相关系数
+        rho  = self.param_dict['dict']
+
+        # 获得下一期的技术冲击
+        zplus = self.z**rho*np.exp(eplus) # 扰动项以指数形式冲击技术(即技术冲击表现出对数正太分布)
+
+        return zplus
+
+    # 定义更新状态变量的方法
+    def update(self):
+        """更新状态变量, k，且当设置为随机时，也更新随机冲击
+
+        """
+        # 分类设置随机和非随机的更新过程
+        if self.stochastic == False:
+            self.e = 0
+            self.z = 1
+        else:
+            self.e = self.eps.rvs()
+            self.z = self.get_newTechShock(self.z, self.e)
+            self.k = self.get_newCapital(self.k, self.z)
+    
+    # 定义转移路径的方法
+    def get_samplePath(self, N=none, tol=None):
+        """生成一个长度为N的状态变量序列，或者生成一个tol水平接近于稳态路径的样本路径用于福利比较
+
+        输入：
+            1. N: 样本路径长度
+            2. tol: 接近稳态值的误差容忍度
+        
+        返回：N行3列的多维数组代表三个状态变量的路径
+
+        """
+        # 设置参数要求
+        if N !=None and tol !=None:
+            assert "参数N和tol需要二选一，不能同时设置"
+        if N !=None:
+            path = np.array([]).reshape((t, 3))
+
+            for t in range(N):
+                path[t,0] = np.append(path, self.k)
+                path[t,1] = np.append(path, self.z)
+                path[t,2] = np.append(path,self.e)
+                self.update()
+        elif tol != None:
+            # 计算稳态值
+            k_star = self.SS_dict['k_star'] 
+            # 设定初始的状态变量路径和与稳态的距离
+            path = np.array([[self.k, self.z, self.e]])
+            dist = np.abs(self.k - k_star)
+
+            while dist > tol:
+                self.update()
+                path[t,0] = np.append(path, self.k)
+                path[t,1] = np.append(path, self.z)
+                path[t,2] = np.append(path, self.e)
+                dist = np.abs(self.k - k_star)
+
+        return path
+
+    # 定义起点和终点的距离
+    def get_marginalDist(self, k0, z0, e0, T=None, N=None):
+        """Returns n draws of k_T, z_T, e_T starting from initial 
+        values k0, z0, and e0.
+        
+        """
+        samples = np.zeros(shape = (N,3))
+        for i in range(n):
+            self.k = k0
+            self.z = z0
+            self.e = e0
+            for t in range(T):
+                self.update()
+            samples[i,0] = self.k
+            samples[i,1] = self.z
+            samples[i,2] = self.e
+        return samples
+
+    # 绘制相位图?????????
+    def plot_phaseSpace(self, k0=None, N=None): 
+        """生成k在t=0到t=N的路径并绘制相位图
+
+        """
+        self.k = k0
+
+        n_even = 2*int(N/2)
+        path = np.zeros(shape = (n_even,2))
+
+        for t in range(0,n_even,2):
+            path[t,0] = self.k
+            path[t+1,0] = self.k
+            self.update()
+
+        self.k = k0
+        path[0,1] = self.update()
+
+
+
+
+
+
+
         
 
 
