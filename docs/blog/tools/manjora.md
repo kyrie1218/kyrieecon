@@ -226,4 +226,17 @@ yay -S remmina remmina-plugin-rdesktop
 
 - 在manjora中打开remmina,添加远程连接对象，输入ipv4地址，用户名，密码，如需文件传输，设置共享目录（共享目录为manjora上的目录）。
 
+23. 挂载硬盘
+使用系统自带的工具disks
+
+24. 安装calibre-web
+```
+proxychains pip install calibreweb
+```
+之后使用如下命令运行：
+```
+cps
+```
+打开网址http://localhost:8083/即可配置。
+
 

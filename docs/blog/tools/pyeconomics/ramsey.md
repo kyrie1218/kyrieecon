@@ -45,12 +45,74 @@ import matplotlib.pyplot as plt
 - 7. 最优政策分析(本文没有).
 
 ## 4. 定义方法
+### 4.1. 获取人均有效产出
+在ramsey离散时间模型中，当期人均有效产出如下：
+$$
+y_{t} = k_{t}^{\alpha}
+$$
+其中，$k_{t}$是时期$t$的人均有效产出，即$k_{t} \equiv K_{t}/(A_{t}N_{t})$。
+因此，可将其定义为方法`get_output`如下：
+```python
+def get_output(self,k):
+    """获得人均有效产出。
 
+    输入：
+        k: 当前人均有效资本;
 
+    返回：
+        y: 当前人均有效产出
+    """
+    # 获取参数资本收入份额参数alpha
+    alpha = self.alpha
 
+    y = k**alpha
+    return y
 
+```
 
+### 4.2. 获取人均有效投资
+在Ramsey模型中，当期人均有效投资$i_{t}$等于人均有效产出$y_{t}$减去人均有效消费$c_{t}$：
+$$
+i_{t} = y_{t}-c_{t}
+$$
+因此，我们可定义方法`get_investment`如下：
+```python
+def get_investment(self,k,c):
+    """获取人均有效投资
 
+    输入：
+        k：人均有效资本
+        c: 人均有效消费
+
+    返回：
+        i： 人均有效投资
+
+    """
+    i = self.get_output(k)-c
+    return i
+
+```
+### 4.3. 获取实际有效工资率
+在Ramsey模型，实际工资率等于有效劳动的边际产出决定：
+$$
+w_{t} =  \frac{\partial Y_{t}}{\partial (A_{t}N_{t})} = \frac{\partial{(K_{t})^{\alpha}(A_{t}N_{t})^{1-\alpha}}}{\partial (A_{t}N_{t})}  \\
+= (1-\alpha)\frac{Y_{t}}{A_{t}N_{t}} = (1-\alpha)y_{t}
+$$
+因此，可以获得`get_wageRate`方法：
+```python
+def get_wageRate(self,k):
+    """获得有效劳动的工资率
+
+    """
+    # 抽取资本收入份额参数alpha
+    alpha = self.alpha
+
+    # 获得有效劳动的实际工资率
+    w = (1-alpha)*self.get_output(k)
+    return w
+
+```
+### 4.4. 获取实际利率
 
 
 
