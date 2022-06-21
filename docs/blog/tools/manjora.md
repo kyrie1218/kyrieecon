@@ -211,5 +211,19 @@ yay -S firefox-nightly
 21. 定期备份
 使用默认的time shift。
 
+22. 远程桌面连接到win10
+- 在manjora下载remmina,remmina-plugin-rdesktop
+```
+yay -S remmina remmina-plugin-rdesktop
+```
+- 在win10配置远程桌面服务
+  - 1. 设置-系统-远程桌面-打开
+  - 2. 在远程桌面用户账户选择可访问这台电脑的用户-添加对应本地用户名
+  - 3. 在开始菜单中用户账户设置本地账户登录
+  - 4. 在此电脑-管理-服务-开启remote相关的服务
+  - 5. 在网络中点击以太网查看对应ipv4地址
+  - 6. 重启系统
+
+- 在manjora中打开remmina,添加远程连接对象，输入ipv4地址，用户名，密码，如需文件传输，设置共享目录（共享目录为manjora上的目录）。
 
 
