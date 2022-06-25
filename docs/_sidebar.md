@@ -24,6 +24,7 @@
     - [Numpy](/blog/tools/python/numpy.md)
     - [Matplotlib](/blog/tools/python/matplotlib.md)
     - [Scipy](/blog/tools/python/scipy.md)
+    - [Pandas](/blog/tools/python/pandas.md)
 
   - Python代码阅读
     - [Solow模型@davidrpugh](blog/tools/pyeconomics/solow.md)
