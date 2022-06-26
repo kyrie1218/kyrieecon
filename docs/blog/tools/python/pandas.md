@@ -31,3 +31,9 @@ df_test.query("inw4=='1.yes' and h4child>0") # 仅包含inw4=='1.yes'且h4child>
 
 #### 3.2 筛选列
 #### 3.2.1 按列名筛选列 `filter`
+
+
+
+### 3.2 列修改
+#### 3.2.1 重命名列名`rename`
+`df.rename(columns={column_oldname:column_newname})`是常见的pandas重命名列的方式。其中关键参数`columns`需要传递一个字典。该字典将原有的列名`column_oldname`映射到新命名的列名`column_newname`上。
