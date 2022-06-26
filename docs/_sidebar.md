@@ -18,6 +18,7 @@
   - 环境配置
     - [Docsify](/blog/tools/docsify.md)
     - [Manjora OS](/blog/tools/manjora.md)
+    - [Linux](/blog/tools/linux.md)
   - Python
     - [Python基础](/blog/tools/python/pythonabc.md)
     - [Sympy](/blog/tools/python/sympy.md)

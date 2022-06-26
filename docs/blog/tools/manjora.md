@@ -239,4 +239,22 @@ cps
 ```
 打开网址http://localhost:8083/即可配置。
 
+25. 解决vscode终端乱码问题
+    修改terminal.integratedfontFamily为NotoSansMono Nerd Font即可。
 
+26. stata17关联到anaconda的jupyter
+```terminal
+conda activate base
+pip install --upgrade --user stata_setup
+```
+打开anaconda的一个jupyter notebook,然后配置：
+``` anaconda jupyter
+# 改变工作目录到stata安装目录下的utilities目录，如`/usr/local/stata17/utilities`
+import os
+os.chdir('/usr/local/stata17/utilities')
+
+# 配置pystata
+from pystata import config
+config.init('mp')
+```
+每次使用的时候都需要这样？？
