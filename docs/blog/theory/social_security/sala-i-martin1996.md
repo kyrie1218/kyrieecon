@@ -37,3 +37,6 @@ $$
 
 ## 参考文献
 !> Sala-I-Martin, X. X. (1996). A Positive Theory of Social Security. Journal of Economic Growth, 1(2), 277–304.
+
+## 数学附录
+<iframe src="https://nbviewer.org/github/kyrie1218/maple_for_macroeconomics/blob/master/sala-i-martin1996.ipynb" width="100%" height="550"></iframe>
