@@ -6,11 +6,14 @@
     - [Matsuyama (1999, 2001)](/blog/theory/endogenous_cycle/matsuyama1999&2001.md)
   - 最优社保
     - [Sala-i-Martin (1996)](/blog/theory/social_security/sala-i-martin1996.md)
+  - 数学附录
+    - [Sala-i-Martin (1996)](/blog/theory/social_security/appendix-sala-i-martin1996.md)
 - 经验证据
   - 增长方程
     - [Alfo et al. (2022)](/blog/empirical/alfo2022.md)
     - [Mankiw et al. (1992)](/blog/empirical/mankiw1992.md)
-
+  - 新冠疫情
+    - [Takaku and Yokoyama (2021)](/blog/empirical/takaku2021.md)
 
 - 经济数学
   - [导论](/blog/math/math.md)
