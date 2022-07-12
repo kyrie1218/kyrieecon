@@ -29,7 +29,8 @@
     - [Matplotlib](/blog/tools/python/matplotlib.md)
     - [Scipy](/blog/tools/python/scipy.md)
     - [Pandas](/blog/tools/python/pandas.md)
-
+  - Latex
+    - [Latex常用数学](/blog/tools/latex/latex_basic.md)
   - Python代码阅读
     - [Solow模型@davidrpugh](blog/tools/pyeconomics/solow.md)
     - [Ramsey模型@davidrpugh](blog/tools/pyeconomics/ramsey.md)
